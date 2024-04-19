@@ -1,0 +1,55 @@
+public class Elevador1 {
+    private int capacidade;
+    private int totalAndares;
+    private int andarAtual;
+    private int pessoasPresentes;
+    private int andarSolicitado;
+    private int entrarPessoa;
+    private int sairPessoa;
+
+   public Elevador1(int capacidade, int totalAndares, int andarAtual, int pessoasPresentes, int andarSolicitado, int entrarPessoa, int sairPessoa) {
+        this.capacidade = capacidade;
+        this.totalAndares = totalAndares;
+        this.andarAtual = andarAtual; 
+        this.pessoasPresentes = pessoasPresentes;
+        this.andarSolicitado = andarSolicitado;
+        this.entrarPessoa = entrarPessoa;
+        this.sairPessoa = sairPessoa;
+    }
+
+    public void entrar() {
+        if (pessoasPresentes < capacidade) {
+          pessoasPresentes=pessoasPresentes+entrarPessoa;
+            System.out.println("Entrou no elevador:"+entrarPessoa);
+        } else {
+            System.out.println("O elevador está cheio. Não é possível entrar mais pessoas.");
+        }
+    }
+
+    public void sair() {
+        if (pessoasPresentes > 0) {
+          pessoasPresentes=pessoasPresentes-sairPessoa;
+            System.out.println("Saiu do elevador:"+sairPessoa);
+        } else {
+            System.out.println("O elevador já está vazio. Não é possível remover pessoas.");
+        }
+    }
+
+    public void subir() {
+        if (andarAtual < totalAndares && andarAtual<andarSolicitado) {andarAtual=
+            andarAtual+(andarSolicitado-andarAtual);
+            System.out.println("O elevador subiu para o andar " + andarAtual + ".");
+        } else if (  andarAtual==20){
+            System.out.println("O elevador já está no último andar. Não é possível subir mais.");
+        }
+    }
+
+    public void descer() {
+        if (andarAtual > 0 && andarAtual>andarSolicitado) {andarAtual=
+            andarAtual-(andarAtual-andarSolicitado);
+            System.out.println("O elevador desceu para o andar " + andarAtual + ".");
+        } else if (andarAtual==0){
+            System.out.println("O elevador já está no térreo. Não é possível descer mais.");
+        }
+    }
+}

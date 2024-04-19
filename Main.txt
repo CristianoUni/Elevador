@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Capacidade Pessoas:");
+        int capacidade = input.nextInt();
+
+        System.out.println("Total Andares:");
+        int totalAndares = input.nextInt();
+
+        System.out.println("Pessoas no Elevador:");
+        int pessoasPresentes = input.nextInt();
+      
+        System.out.println("Entrar:");
+        int entrarPessoa = input.nextInt();
+      
+        System.out.println("Sair:");
+        int sairPessoa = input.nextInt();
+
+        System.out.println("Andar atual:");
+        int andarAtual = input.nextInt();
+
+        System.out.println("Andar Solicitado:");
+        int andarSolicitado = input.nextInt();
+
+        Elevador1 elevador1 = new Elevador1(capacidade, totalAndares, andarAtual, pessoasPresentes, andarSolicitado, entrarPessoa, sairPessoa);
+
+        elevador1.entrar();
+        elevador1.subir();
+        elevador1.subir();
+        elevador1.subir();
+        elevador1.sair();
+        elevador1.descer();
+
+        input.close();
+    }
+}
